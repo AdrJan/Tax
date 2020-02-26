@@ -33,4 +33,8 @@ public class TestBase {
     protected static String getTitle() {
         return driver.getTitle();
     }
+
+    protected static String textElx(String xpath) {
+        return elX(xpath).getAttribute("innerText");
+    }
 }

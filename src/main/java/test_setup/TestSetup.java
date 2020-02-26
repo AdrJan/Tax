@@ -24,6 +24,8 @@ public class TestSetup extends TestBase {
         driverManager = DriverManagerFactory.getDriver(Browsers.CHROME);
         driver = driverManager.getWebDriver();
         taxAction = new TaxAction();
+
+        driver.manage().window().maximize();
     }
 
     @AfterTest
