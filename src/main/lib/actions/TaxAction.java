@@ -29,6 +29,11 @@ public class TaxAction extends TestBase {
         actions.moveToElement(element).perform();
     }
 
+    public void typeText(WebElement element, String text) {
+        element.clear();
+        actions.sendKeys(element, text).perform();
+    }
+
     public void assertXpath(String xpath) {
         Assert.assertTrue(
             ellX(xpath).size() > 0,

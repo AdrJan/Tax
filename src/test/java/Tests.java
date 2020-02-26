@@ -1,14 +1,20 @@
-import org.testng.Assert;
 import org.testng.annotations.Test;
-import pop.automation_practice.AddedItemSummary;
-import pop.automation_practice.CartList;
-import pop.automation_practice.ItemTile;
+import pop.automation_practice.MainPage;
+import pop.automation_practice.ProductsPage;
 import pop.automation_practice.navigation.MainNavBar;
 import pop.automation_practice.navigation.MainNavItems;
+import pop.automation_practice.products.AddedItemSummary;
+import pop.automation_practice.products.CartList;
+import pop.automation_practice.products.ItemTile;
+import pop.automation_practice.products.ProductsSorting;
 import test_setup.TestSetup;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 /**
  * Test class with all testcases for http://automationpractice.com/ site.
@@ -23,7 +29,7 @@ public class Tests extends TestSetup {
     @Test(priority = 1)
     public void smokeTest() {
         openPage(PAGE_URL);
-        Assert.assertEquals("My Store", getTitle());
+        assertEquals("My Store", getTitle());
     }
 
     @Test(priority = 2)
@@ -64,9 +70,48 @@ public class Tests extends TestSetup {
         totalCost = cartList.expandCart().getTotalCost();
         shippingCost = cartList.getShippingCost();
 
-        Assert.assertEquals(
+        assertEquals(
                 sum + shippingCost, totalCost,
                 "Evaluated cost is not correct"
+        );
+    }
+
+    @Test(priority = 4)
+    public void searchForProducts() {
+        MainPage mainPage = new MainPage();
+
+        openPage(PAGE_URL);
+
+        ArrayList<String> products = new ArrayList<>(Arrays.asList("Blouse", "T-shirt", "Dress"));
+        for(String product : products) {
+            searchForSpecificProduct(mainPage, product);
+        }
+    }
+
+    @Test(priority = 5)
+    public void sortProductsPriceASC() {
+        openPage(PAGE_URL);
+        new MainNavBar().chooseMenuItem(MainNavItems.DRESSES);
+        new ProductsPage().setSorting(ProductsSorting.PRICE_ASC);
+
+        ArrayList<Double> allProductsPrices = new ItemTile().getAllProductsPrices();
+        ArrayList<Double> allProductsPricesSorted = (ArrayList<Double>) allProductsPrices.clone();
+        Collections.sort(allProductsPricesSorted);
+
+        assertTrue(
+                allProductsPricesSorted.equals(allProductsPrices),
+                "Products are not sorted correctly"
+        );
+    }
+
+    private void searchForSpecificProduct(MainPage mainPage, String product) {
+        String PRODUCT_ASSERT = "//ul[contains(@class, 'product_list')]" +
+                "//a[@class = 'product-name' and contains(., '%s')]";
+        mainPage.searchFor(product);
+        assertTrue(
+                ellX(String.format(PRODUCT_ASSERT, product)).size()
+                        == ellX(String.format(PRODUCT_ASSERT, "")).size(),
+                "Not every product on list is " + product
         );
     }
 }

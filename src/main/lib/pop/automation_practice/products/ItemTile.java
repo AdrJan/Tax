@@ -1,7 +1,11 @@
-package pop.automation_practice;
+package pop.automation_practice.products;
 
+import org.openqa.selenium.WebElement;
 import test_setup.TestBase;
 import utils.Formatter;
+
+import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 /**
  * Pop class representing shop item.
@@ -30,5 +34,16 @@ public class ItemTile extends TestBase {
 
     public Double getPrice(String productName) {
         return Formatter.getFormattedPrice(textElx(String.format(PRICE_LABEL_FORMAT, productName)));
+    }
+
+    public Double getPrice(WebElement webElement) {
+        return Formatter.getFormattedPrice(textElx(webElement));
+    }
+
+    public ArrayList<Double> getAllProductsPrices() {
+        return (ArrayList<Double>) ellX(String.format(PRICE_LABEL_FORMAT, ""))
+                        .stream()
+                        .map(x -> getPrice(x))
+                        .collect(Collectors.toList());
     }
 }

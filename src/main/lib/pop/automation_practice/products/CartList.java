@@ -1,4 +1,4 @@
-package pop.automation_practice;
+package pop.automation_practice.products;
 
 import test_setup.TestBase;
 import utils.Formatter;
@@ -7,7 +7,6 @@ public class CartList extends TestBase {
 
     public CartList expandCart() {
         taxAction.click(elX("//a[contains(., 'Cart')]"));
-        taxAction.sleep(500);
         return this;
     }
 

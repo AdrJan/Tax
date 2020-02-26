@@ -37,4 +37,8 @@ public class TestBase {
     protected static String textElx(String xpath) {
         return elX(xpath).getAttribute("innerText");
     }
+
+    protected static String textElx(WebElement webElement) {
+        return webElement.getAttribute("innerText");
+    }
 }
