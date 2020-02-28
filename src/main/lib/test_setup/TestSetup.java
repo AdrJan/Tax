@@ -25,6 +25,7 @@ public class TestSetup extends TestBase {
         driver = driverManager.getWebDriver();
         taxAction = new TaxAction();
 
+        driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
     }
 
