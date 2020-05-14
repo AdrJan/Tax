@@ -1,7 +1,7 @@
 package pop.automation_practice.products;
 
 import org.openqa.selenium.WebElement;
-import test_setup.TestBase;
+import lib.test_setup.TestBase;
 import utils.Formatter;
 
 import java.util.ArrayList;
@@ -41,7 +41,7 @@ public class ItemTile extends TestBase {
     }
 
     public ArrayList<Double> getAllProductsPrices() {
-        return (ArrayList<Double>) ellX(String.format(PRICE_LABEL_FORMAT, ""))
+        return (ArrayList<Double>) ell(String.format(PRICE_LABEL_FORMAT, ""))
                         .stream()
                         .map(x -> getPrice(x))
                         .collect(Collectors.toList());

@@ -1,6 +1,6 @@
 package pop.automation_practice.products;
 
-import test_setup.TestBase;
+import lib.test_setup.TestBase;
 import utils.Formatter;
 
 public class CartList extends TestBase {

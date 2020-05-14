@@ -1,6 +1,6 @@
 package pop.automation_practice;
 
-import test_setup.TestBase;
+import lib.test_setup.TestBase;
 
 /**
  * POP - Main Page.
@@ -15,6 +15,4 @@ public class MainPage extends TestBase {
         taxAction.click(elX("//button[@name = 'submit_search']"));
         return this;
     }
-
-
 }

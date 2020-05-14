@@ -1,6 +1,6 @@
 package pop.automation_practice.products;
 
-import test_setup.TestBase;
+import lib.test_setup.TestBase;
 
 /**
  * POP class representing box after adding product to shopping cart.

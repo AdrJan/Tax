@@ -1,3 +1,5 @@
+package automation_practice;
+
 import org.testng.annotations.Test;
 import pop.automation_practice.MainPage;
 import pop.automation_practice.ProductsPage;
@@ -7,7 +9,7 @@ import pop.automation_practice.products.AddedItemSummary;
 import pop.automation_practice.products.CartList;
 import pop.automation_practice.products.ItemTile;
 import pop.automation_practice.products.ProductsSorting;
-import test_setup.TestSetup;
+import lib.test_setup.TestSetup;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -40,7 +42,10 @@ public class Tests extends TestSetup {
         openPage(PAGE_URL);
         for (MainNavItems mainNavItem : MainNavItems.values()) {
             mainNavBar.chooseMenuItem(mainNavItem);
-            taxAction.assertXpath(String.format(ASSERT_FORMAT, mainNavItem.getLabel()));
+            taxAction.assertXpath(
+                    String.format(ASSERT_FORMAT, mainNavItem.getLabel()),
+                    "Wrong item!"
+            );
         }
     }
 
@@ -109,8 +114,8 @@ public class Tests extends TestSetup {
                 "//a[@class = 'product-name' and contains(., '%s')]";
         mainPage.searchFor(product);
         assertTrue(
-                ellX(String.format(PRODUCT_ASSERT, product)).size()
-                        == ellX(String.format(PRODUCT_ASSERT, "")).size(),
+                ell(String.format(PRODUCT_ASSERT, product)).size()
+                        == ell(String.format(PRODUCT_ASSERT, "")).size(),
                 "Not every product on list is " + product
         );
     }

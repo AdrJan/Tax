@@ -1,6 +1,6 @@
 package pop.automation_practice.navigation;
 
-import test_setup.TestBase;
+import lib.test_setup.TestBase;
 
 /**
  *  Page object pattern class for main navigation bar.

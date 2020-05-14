@@ -1,7 +1,7 @@
 package pop.automation_practice;
 
 import pop.automation_practice.products.ProductsSorting;
-import test_setup.TestBase;
+import lib.test_setup.TestBase;
 
 /**
  * POP class representing page with all products.

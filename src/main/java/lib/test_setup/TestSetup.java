@@ -1,12 +1,13 @@
-package test_setup;
+package lib.test_setup;
 
-import actions.TaxAction;
-import manager.driver_manager.Browsers;
-import manager.driver_manager.DriverManager;
-import manager.driver_manager.DriverManagerFactory;
+import lib.actions.TaxAction;
+import lib.manager.driver_manager.Browsers;
+import lib.manager.driver_manager.DriverManager;
+import lib.manager.driver_manager.DriverManagerFactory;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 
 /**
  * Setting method for initializing webdriver before test
@@ -18,15 +19,19 @@ public class TestSetup extends TestBase {
 
     protected static DriverManager driverManager;
 
-    @BeforeClass
+    @BeforeSuite
     public void setUp() {
         System.out.println("Setting up WebDriver");
         driverManager = DriverManagerFactory.getDriver(Browsers.CHROME);
         driver = driverManager.getWebDriver();
         taxAction = new TaxAction();
 
-        driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
+    }
+
+    @BeforeMethod
+    public void clearCookie() {
+        driver.manage().deleteAllCookies();
     }
 
     @AfterTest
