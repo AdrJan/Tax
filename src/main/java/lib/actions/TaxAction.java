@@ -21,7 +21,7 @@ public class TaxAction extends TestBase {
     static Actions actions = new Actions(driver);
 
     private static final int RETRY_COUNT = 3;
-    private static final double DELTA = 0.01;
+    private static final double DELTA = 0.001;
 
     //TODO: move RETRY_COUNT to config file
     public void click(WebElx webElx) {
@@ -47,15 +47,16 @@ public class TaxAction extends TestBase {
         actions.moveToElement(webElx.getWE()).perform();
     }
 
+    public void scrollIntoView(WebElx webElx) {
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", webElx.getWE());
+    }
+
     public void typeText(WebElx webElx, String text) {
         webElx.getWE().clear();
         actions.sendKeys(webElx.getWE(), text).perform();
     }
 
-    public void waitFor(ExpectedCondition<?> expectedCondition) {
-        new WebDriverWait(driver, 20).until(expectedCondition);
-    }
-
+    //TODO: Very rarely returns empty string, needs work
     public String getText(WebElx webElx) {
         sleep(1000);
         return textElx(webElx.getWE());
@@ -69,8 +70,8 @@ public class TaxAction extends TestBase {
                 .executeScript("return jQuery.active == 0"));
     }
 
-    public void scrollIntoView(WebElx webElx) {
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", webElx.getWE());
+    public void waitFor(ExpectedCondition<?> expectedCondition) {
+        new WebDriverWait(driver, 20).until(expectedCondition);
     }
 
     public void sleep(long milliseconds) {

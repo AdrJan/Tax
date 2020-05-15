@@ -15,7 +15,7 @@ import pop.displate.cart.Cart;
 import pop.displate.products.Products;
 
 /**
- * Class with all tests of page: https://displate.com
+ * Class with all tests for page: https://displate.com
  *
  * @author Adrian Jankowski
  */
@@ -52,19 +52,20 @@ public class Tests extends TestSetup {
         String discountCode = "Empire40";
         String collectionName = "Love Star Wars";
         String country = "United States";
+        int whichProduct = 1;
         double discount = 40.0; //Discount in percents
         double priceProduct;
         String productHref;
 
-        productParameters.setFinish(Finish.MATTE);
+        productParameters.setFinish(Finish.GLOSS);
         productParameters.setFrame(Frame.NATURAL_WOOD_PATTERN);
-        productParameters.setSize(Size.M);
+        productParameters.setSize(Size.L);
 
         openPage(PAGE_URL);
         mainPage.closeCookiePopup();
         mainPage.goToSpecialOffer();
         products.selectCollection(collectionName);
-        products.selectProduct(1);
+        products.selectProduct(whichProduct);
         fillProductForm(productParameters);
         priceProduct = productPage.getPrice();
         productHref = getUrl();
