@@ -1,9 +1,9 @@
-package pop.displate.ProductPage;
+package pop.displate.product;
 
-import pop.displate.ProductPage.options.Finish;
-import pop.displate.ProductPage.options.Frame;
-import pop.displate.ProductPage.options.Quantity;
-import pop.displate.ProductPage.options.Size;
+import pop.displate.product.options.Finish;
+import pop.displate.product.options.Frame;
+import pop.displate.product.options.Quantity;
+import pop.displate.product.options.Size;
 
 public class ProductParameters {
 

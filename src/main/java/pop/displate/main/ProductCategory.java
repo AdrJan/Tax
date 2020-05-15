@@ -1,4 +1,4 @@
-package pop.displate.MainPage;
+package pop.displate.main;
 
 /**
  * Enum representing all product categories on main page of www.displate.com.

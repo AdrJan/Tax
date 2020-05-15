@@ -1,4 +1,4 @@
-package pop.displate.MainPage;
+package pop.displate.main;
 
 import lib.test_setup.TestBase;
 

@@ -1,12 +1,11 @@
-package pop.displate.ProductPage.options;
+package pop.displate.product.options;
 
-public enum Size implements Assertable {
-    M("M"),
-    L("L"),
-    XL("XL");
+public enum Finish implements Assertable {
+    MATTE("Matte"),
+    GLOSS("Gloss");
 
-    private final static String NAME = "size";
     private String optionName;
+    private final static String NAME = "finish";
 
     public String getOptionName() {
         return optionName;
@@ -16,7 +15,7 @@ public enum Size implements Assertable {
         return NAME;
     }
 
-    Size(String optionName) {
+    Finish(String optionName) {
         this.optionName = optionName;
     }
 }

@@ -1,4 +1,4 @@
-package pop.displate.ProductPage.options;
+package pop.displate.product.options;
 
 public interface Assertable {
 

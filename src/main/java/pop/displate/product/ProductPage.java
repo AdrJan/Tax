@@ -1,8 +1,8 @@
-package pop.displate.ProductPage;
+package pop.displate.product;
 
-import pop.displate.ProductPage.options.Finish;
-import pop.displate.ProductPage.options.Frame;
-import pop.displate.ProductPage.options.Size;
+import pop.displate.product.options.Finish;
+import pop.displate.product.options.Frame;
+import pop.displate.product.options.Size;
 import lib.test_setup.TestBase;
 import utils.Formatter;
 

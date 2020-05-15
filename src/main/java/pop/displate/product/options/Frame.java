@@ -1,4 +1,4 @@
-package pop.displate.ProductPage.options;
+package pop.displate.product.options;
 
 public enum Frame implements Assertable {
     NO_FRAME("No frame"),
