@@ -1,6 +1,7 @@
 package lib.actions;
 
 import lib.base_elements.WebElx;
+import lib.test_setup.TestBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.interactions.Actions;
@@ -8,7 +9,6 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import lib.test_setup.TestBase;
 
 /**
  * Class with basic actions on page for all possible POPs.
@@ -45,6 +45,7 @@ public class TaxAction extends TestBase {
 
     public void hover(WebElx webElx) {
         actions.moveToElement(webElx.getWE()).perform();
+        sleep(500);
     }
 
     public void scrollIntoView(WebElx webElx) {
