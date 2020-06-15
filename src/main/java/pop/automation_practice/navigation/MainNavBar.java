@@ -16,6 +16,10 @@ public class MainNavBar extends TestBase {
     public void chooseMenuItem(MainNavItems mainNavItems) {
         taxAction.click(elX(String.format(MENU_ITEM_XPATH, mainNavItems.getLabel())));
     }
+
+    public void chooseMenuItem(String menuLabel) {
+        taxAction.click(elX(String.format(MENU_ITEM_XPATH, menuLabel)));
+    }
 }
 
 
