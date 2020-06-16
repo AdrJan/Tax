@@ -3,7 +3,7 @@ package bdd.automation_practice.stepdefs;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import lib.test_setup.TestSetup;
+import lib.test_setup.TestBase;
 import pop.automation_practice.navigation.MainNavBar;
 
 /**
@@ -12,7 +12,7 @@ import pop.automation_practice.navigation.MainNavBar;
  * Class defining steps for main page of www.automationpractice.com.
  */
 
-public class MainPageDefs extends TestSetup {
+public class MainPageDefs extends TestBase {
 
     private final static String PAGE_URL = "http://automationpractice.com/index.php";
 
@@ -20,13 +20,11 @@ public class MainPageDefs extends TestSetup {
 
     @Given("user is on Home Page")
     public void user_is_on_Home_Page() {
-        setUp();
-        clearCookie();
         openPage(PAGE_URL);
     }
 
-    @When("he click on {string} category")
-    public void he_click_on_menu(String menuLabel) {
+    @When("user clicks on {string} category")
+    public void user_clicks_on_category(String menuLabel) {
         new MainNavBar().chooseMenuItem(menuLabel);
     }
 

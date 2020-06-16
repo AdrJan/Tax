@@ -6,7 +6,7 @@ import utils.Formatter;
 public class CartList extends TestBase {
 
     public CartList expandCart() {
-        taxAction.click(elX("//a[contains(., 'Cart')]"));
+        taxAction.hover(elX("//a[contains(., 'Cart')]"));
         return this;
     }
 

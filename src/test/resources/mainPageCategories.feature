@@ -3,9 +3,9 @@ Feature: Automated tests of products category bar
 
   Scenario: Customer is iterating through products category menu items
     Given user is on Home Page
-    When he click on "Women" category
+    When user clicks on "Women" category
     Then "Women" page is displayed
-    When he click on "Dresses" category
+    When user clicks on "Dresses" category
     Then "Dresses" page is displayed
-    When he click on "T-shirts" category
+    When user clicks on "T-shirts" category
     Then "T-shirts" page is displayed

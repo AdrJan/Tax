@@ -21,7 +21,3 @@ public class MainNavBar extends TestBase {
         taxAction.click(elX(String.format(MENU_ITEM_XPATH, menuLabel)));
     }
 }
-
-
-
-
