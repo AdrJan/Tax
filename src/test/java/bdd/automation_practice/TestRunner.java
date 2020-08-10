@@ -9,7 +9,7 @@ import io.cucumber.testng.CucumberOptions;
  * Cucumber test runner class.
  */
 
-@CucumberOptions(features = "src/test/java/bdd/automation_practice/resources")
+@CucumberOptions(features = "src/test/resources")
 public class TestRunner extends AbstractTestNGCucumberTests {
 
 }
