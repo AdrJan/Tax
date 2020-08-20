@@ -8,8 +8,16 @@ package utils;
 
 public class Formatter {
 
-    public static double getFormattedPrice(String text) {
-        return Double.valueOf(text.replaceAll("[^\\d.]", "").trim()
+    /**
+     * Method for formatting text value to double. Used in cases
+     * where you want to get numeric value from a text retrieved
+     * from WebElement.
+     *
+     * @param text text you want to format
+     * @return double value responding that text
+     */
+    public static double formatToDouble(String text) {
+        return Double.parseDouble(text.replaceAll("[^\\d.]", "").trim()
         );
     }
 }

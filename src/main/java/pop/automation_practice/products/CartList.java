@@ -11,10 +11,10 @@ public class CartList extends TestBase {
     }
 
     public Double getShippingCost() {
-        return Formatter.getFormattedPrice(textElx("//span[contains(@class, 'cart_block_shipping_cost')]"));
+        return Formatter.formatToDouble(textElx("//span[contains(@class, 'cart_block_shipping_cost')]"));
     }
 
     public Double getTotalCost() {
-        return Formatter.getFormattedPrice(textElx("//span[contains(@class, 'cart_block_total')]"));
+        return Formatter.formatToDouble(textElx("//span[contains(@class, 'cart_block_total')]"));
     }
 }

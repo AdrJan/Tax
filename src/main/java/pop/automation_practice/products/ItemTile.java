@@ -1,7 +1,7 @@
 package pop.automation_practice.products;
 
-import org.openqa.selenium.WebElement;
 import lib.test_setup.TestBase;
+import org.openqa.selenium.WebElement;
 import utils.Formatter;
 
 import java.util.ArrayList;
@@ -33,17 +33,17 @@ public class ItemTile extends TestBase {
     }
 
     public Double getPrice(String productName) {
-        return Formatter.getFormattedPrice(textElx(String.format(PRICE_LABEL_FORMAT, productName)));
+        return Formatter.formatToDouble(textElx(String.format(PRICE_LABEL_FORMAT, productName)));
     }
 
     public Double getPrice(WebElement webElement) {
-        return Formatter.getFormattedPrice(textElx(webElement));
+        return Formatter.formatToDouble(textElx(webElement));
     }
 
     public ArrayList<Double> getAllProductsPrices() {
         return (ArrayList<Double>) ell(String.format(PRICE_LABEL_FORMAT, ""))
-                        .stream()
-                        .map(x -> getPrice(x))
+                .stream()
+                .map(this::getPrice)
                         .collect(Collectors.toList());
     }
 }

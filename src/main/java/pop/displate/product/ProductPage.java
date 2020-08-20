@@ -1,9 +1,9 @@
 package pop.displate.product;
 
+import lib.test_setup.TestBase;
 import pop.displate.product.options.Finish;
 import pop.displate.product.options.Frame;
 import pop.displate.product.options.Size;
-import lib.test_setup.TestBase;
 import utils.Formatter;
 
 /**
@@ -38,6 +38,6 @@ public class ProductPage extends TestBase {
     }
 
     public Double getPrice() {
-        return Formatter.getFormattedPrice(taxAction.getText(elX("//div[@class = 'add-to-cart-button-container']//span")));
+        return Formatter.formatToDouble(taxAction.getText(elX("//div[@class = 'add-to-cart-button-container']//span")));
     }
 }

@@ -35,14 +35,14 @@ public class Cart extends TestBase {
     }
 
     public double getTotalCost() {
-        return Formatter.getFormattedPrice(taxAction.getText(elX("//span[@id = 'total-cost']")));
+        return Formatter.formatToDouble(taxAction.getText(elX("//span[@id = 'total-cost']")));
     }
 
     public double getShipmentCost() {
-        return Formatter.getFormattedPrice(taxAction.getText(elX("//span[@id = 'shipment-amount']")));
+        return Formatter.formatToDouble(taxAction.getText(elX("//span[@id = 'shipment-amount']")));
     }
 
     public double getCartCost() {
-        return Formatter.getFormattedPrice(taxAction.getText(elX("//span[@id = 'cart-total']")));
+        return Formatter.formatToDouble(taxAction.getText(elX("//span[@id = 'cart-total']")));
     }
 }
