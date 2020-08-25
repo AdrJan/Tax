@@ -4,8 +4,10 @@ import lib.actions.TaxAction;
 import lib.manager.driver_manager.Browsers;
 import lib.manager.driver_manager.DriverManager;
 import lib.manager.driver_manager.DriverManagerFactory;
+import lib.manager.logger.TaxLogger;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterTest;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 
@@ -20,7 +22,7 @@ public class TestSetup extends TestBase {
     protected static DriverManager driverManager;
 
     @BeforeSuite
-    public void setUp() {
+    public void setUpSuite() {
         System.out.println("Setting up WebDriver");
         driverManager = DriverManagerFactory.getDriver(Browsers.CHROME);
         driver = driverManager.getWebDriver();
@@ -30,17 +32,19 @@ public class TestSetup extends TestBase {
     }
 
     @BeforeMethod
-    public void clearCookie() {
+    public void setUpTest() {
         driver.manage().deleteAllCookies();
+        TaxLogger.testStarts();
     }
 
-    @AfterTest
+    @AfterMethod
+    public void testClose() {
+        TaxLogger.testEnds();
+    }
+
+    @AfterSuite
     public void tearDown() {
-        close();
-    }
-
-    public void close() {
-        System.out.println("Quitting WebDriver");
+        TaxLogger.info("Quitting WebDriver");
         driverManager.quitWebDriver();
     }
 
