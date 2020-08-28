@@ -1,6 +1,7 @@
 package lib.actions;
 
 import lib.base_elements.WebElx;
+import lib.manager.logger.TaxLogger;
 import lib.test_setup.TestBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -25,34 +26,36 @@ public class TaxAction extends TestBase {
 
     //TODO: move RETRY_COUNT to config file
     public void click(WebElx webElx) {
-        for(int i = 0; i < RETRY_COUNT; i++) {
+        TaxLogger.info("Clicking on element with xpath -> " + webElx.getXpath());
+        for (int i = 0; i < RETRY_COUNT; i++) {
             try {
                 waitFor(ExpectedConditions.elementToBeClickable(webElx.getWE()));
                 webElx.getWE().click();
                 break;
-            } catch(Exception e) {
+            } catch (Exception e) {
                 webElx.setWE(driver.findElement(By.xpath(webElx.getXpath())));
             }
-            //will throw unchecked exception
-            if(i == RETRY_COUNT - 1) {
+            if (i == RETRY_COUNT - 1) {
                 webElx.getWE().click();
             }
         }
-
         waitForNoAjaxPending();
         sleep(500);
     }
 
     public void hover(WebElx webElx) {
+        TaxLogger.info("Hover -> " + webElx.getXpath());
         actions.moveToElement(webElx.getWE()).perform();
         sleep(500);
     }
 
     public void scrollIntoView(WebElx webElx) {
+        TaxLogger.info("Scroll into view -> " + webElx.getXpath());
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", webElx.getWE());
     }
 
     public void typeText(WebElx webElx, String text) {
+        TaxLogger.info("Type text: '" + text + "' on -> " + webElx.getXpath());
         webElx.getWE().clear();
         actions.sendKeys(webElx.getWE(), text).perform();
     }
@@ -64,10 +67,11 @@ public class TaxAction extends TestBase {
     }
 
     public void waitForNoAjaxPending() {
-        waitFor(driver -> ((JavascriptExecutor)driver)
+        TaxLogger.info("Wait for no Ajax pending");
+        waitFor(driver -> ((JavascriptExecutor) driver)
                 .executeScript("return document.readyState")
                 .equals("complete"));
-        waitFor(driver -> ((JavascriptExecutor)driver)
+        waitFor(driver -> ((JavascriptExecutor) driver)
                 .executeScript("return jQuery.active == 0"));
     }
 
@@ -76,14 +80,16 @@ public class TaxAction extends TestBase {
     }
 
     public void sleep(long milliseconds) {
+        TaxLogger.info("Sleep for " + milliseconds + " milliseconds");
         try {
             Thread.sleep(milliseconds);
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     public void assertXpath(String xpath, String message) {
+        TaxLogger.info("Assert xpath -> " + xpath);
         Assert.assertTrue(
                 ell(xpath).size() > 0,
                 "Assert for xpath: " + xpath + "\n" + message
@@ -91,6 +97,7 @@ public class TaxAction extends TestBase {
     }
 
     public void assertTwoDoublesEqual(double double1, double double2) {
+        TaxLogger.info("Assert two doubles equals -> " + double1 + ", " + double2);
         Assert.assertEquals(
                 double1, double2, DELTA
         );
