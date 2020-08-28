@@ -1,5 +1,6 @@
 package automation_practice;
 
+import lib.test_setup.TestSetup;
 import org.testng.annotations.Test;
 import pop.automation_practice.MainPage;
 import pop.automation_practice.ProductsPage;
@@ -9,14 +10,12 @@ import pop.automation_practice.products.AddedItemSummary;
 import pop.automation_practice.products.CartList;
 import pop.automation_practice.products.ItemTile;
 import pop.automation_practice.products.ProductsSorting;
-import lib.test_setup.TestSetup;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
 import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
 
 /**
  * Test class with all testcases for http://automationpractice.com/ site.
@@ -42,7 +41,7 @@ public class Tests extends TestSetup {
         openPage(PAGE_URL);
         for (MainNavItems mainNavItem : MainNavItems.values()) {
             mainNavBar.chooseMenuItem(mainNavItem);
-            taxAction.assertXpath(
+            taxAction.asrt().assertXpath(
                     String.format(ASSERT_FORMAT, mainNavItem.getLabel()),
                     "Wrong item!"
             );
@@ -103,8 +102,9 @@ public class Tests extends TestSetup {
         ArrayList<Double> allProductsPricesSorted = (ArrayList<Double>) allProductsPrices.clone();
         Collections.sort(allProductsPricesSorted);
 
-        assertTrue(
-                allProductsPricesSorted.equals(allProductsPrices),
+        assertEquals(
+                allProductsPrices,
+                allProductsPricesSorted,
                 "Products are not sorted correctly"
         );
     }
@@ -113,9 +113,9 @@ public class Tests extends TestSetup {
         String PRODUCT_ASSERT = "//ul[contains(@class, 'product_list')]" +
                 "//a[@class = 'product-name' and contains(., '%s')]";
         mainPage.searchFor(product);
-        assertTrue(
-                ell(String.format(PRODUCT_ASSERT, product)).size()
-                        == ell(String.format(PRODUCT_ASSERT, "")).size(),
+        assertEquals(
+                ell(String.format(PRODUCT_ASSERT, "")).size(),
+                ell(String.format(PRODUCT_ASSERT, product)).size(),
                 "Not every product on list is " + product
         );
     }

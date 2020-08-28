@@ -9,7 +9,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 
 /**
  * Class with basic actions on page for all possible POPs.
@@ -22,7 +21,6 @@ public class TaxAction extends TestBase {
     static Actions actions = new Actions(driver);
 
     private static final int RETRY_COUNT = 3;
-    private static final double DELTA = 0.001;
 
     //TODO: move RETRY_COUNT to config file
     public void click(WebElx webElx) {
@@ -88,18 +86,7 @@ public class TaxAction extends TestBase {
         }
     }
 
-    public void assertXpath(String xpath, String message) {
-        TaxLogger.info("Assert xpath -> " + xpath);
-        Assert.assertTrue(
-                ell(xpath).size() > 0,
-                "Assert for xpath: " + xpath + "\n" + message
-        );
-    }
-
-    public void assertTwoDoublesEqual(double double1, double double2) {
-        TaxLogger.info("Assert two doubles equals -> " + double1 + ", " + double2);
-        Assert.assertEquals(
-                double1, double2, DELTA
-        );
+    public TaxAsserts asrt() {
+        return taxAsserts;
     }
 }

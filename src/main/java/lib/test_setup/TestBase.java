@@ -1,6 +1,7 @@
 package lib.test_setup;
 
 import lib.actions.TaxAction;
+import lib.actions.TaxAsserts;
 import lib.base_elements.WebElx;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -20,6 +21,7 @@ public class TestBase {
 
     protected static WebDriver driver;
     protected static TaxAction taxAction;
+    protected static TaxAsserts taxAsserts;
 
     protected static WebElx elX(String xpath) {
         return new WebElx(el(xpath), xpath);

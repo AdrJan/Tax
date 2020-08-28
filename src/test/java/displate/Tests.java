@@ -4,6 +4,7 @@ import lib.test_setup.TestSetup;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+import pop.displate.cart.Cart;
 import pop.displate.main.MainPage;
 import pop.displate.product.ProductPage;
 import pop.displate.product.ProductParameters;
@@ -11,7 +12,6 @@ import pop.displate.product.options.Assertable;
 import pop.displate.product.options.Finish;
 import pop.displate.product.options.Frame;
 import pop.displate.product.options.Size;
-import pop.displate.cart.Cart;
 import pop.displate.products.Products;
 
 /**
@@ -90,7 +90,7 @@ public class Tests extends TestSetup {
     //---- ASSERTIONS ----
 
     private void checkProduct(ProductParameters productParameters, String productHref) {
-        taxAction.assertXpath(
+        taxAction.asrt().assertXpath(
                 String.format("//a[@href='%s']", productHref),
                 "Wrong product on cart"
         );
@@ -105,14 +105,14 @@ public class Tests extends TestSetup {
     }
 
     private void checkParameter(Assertable assertable) {
-        taxAction.assertXpath(
+        taxAction.asrt().assertXpath(
                 String.format(PRODUCT_PARAMETER_FORMAT, assertable.getName(), assertable.getOptionName()),
                 "Wrong " + assertable.getName() + "! Should be:" + assertable.getName()
         );
     }
 
     public void checkPrices(double priceProduct, double priceCartAfterDiscount, double discount) {
-        taxAction.assertTwoDoublesEqual(
+        taxAction.asrt().assertTwoDoublesEqual(
                 priceProduct * ((100.0 - discount) / 100.0), priceCartAfterDiscount
         );
     }

@@ -1,6 +1,7 @@
 package lib.test_setup;
 
 import lib.actions.TaxAction;
+import lib.actions.TaxAsserts;
 import lib.manager.driver_manager.Browsers;
 import lib.manager.driver_manager.DriverManager;
 import lib.manager.driver_manager.DriverManagerFactory;
@@ -23,10 +24,12 @@ public class TestSetup extends TestBase {
 
     @BeforeSuite
     public void setUpSuite() {
-        System.out.println("Setting up WebDriver");
+        TaxLogger.info("Setting up test suite");
         driverManager = DriverManagerFactory.getDriver(Browsers.CHROME);
         driver = driverManager.getWebDriver();
+
         taxAction = new TaxAction();
+        taxAsserts = new TaxAsserts();
 
         driver.manage().window().maximize();
     }
