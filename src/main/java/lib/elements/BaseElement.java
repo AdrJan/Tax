@@ -1,5 +1,6 @@
-package lib.base_elements;
+package lib.elements;
 
+import lib.test_setup.TestBase;
 import org.openqa.selenium.WebElement;
 
 /**
@@ -8,12 +9,13 @@ import org.openqa.selenium.WebElement;
  * @author Adrian Jankowski
  */
 
-public class WebElx {
+public class BaseElement extends TestBase {
 
     private String xpath;
+    protected String xpathFormat;
     private WebElement webElement;
 
-    public WebElx(WebElement webElement, String xpath) {
+    public BaseElement(WebElement webElement, String xpath) {
         this.xpath = xpath;
         this.webElement = webElement;
     }

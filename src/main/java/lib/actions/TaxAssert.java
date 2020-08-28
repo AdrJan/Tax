@@ -8,7 +8,7 @@ import org.testng.Assert;
  * Class for keeping assertions methods, checking if specific
  */
 
-public class TaxAsserts extends TestBase {
+public class TaxAssert extends TestBase {
 
     private static final double DELTA = 0.001;
 
