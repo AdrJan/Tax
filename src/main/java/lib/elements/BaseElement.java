@@ -31,4 +31,8 @@ public class BaseElement extends TestBase {
     public String getXpath() {
         return xpath;
     }
+
+    public void setXpath(String xpath) {
+        this.xpath = xpath;
+    }
 }

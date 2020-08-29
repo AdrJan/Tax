@@ -30,7 +30,7 @@ public class TestBase {
     }
 
     protected static WebElement el(String xpath) {
-        taxWait.waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
+        //taxWait.waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
         return driver.findElement(By.xpath(xpath));
     }
 

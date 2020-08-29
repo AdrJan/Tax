@@ -1,11 +1,10 @@
 package pop.automation_practice.products;
 
+import lib.elements.base_elements.Button;
+import lib.elements.base_elements.Label;
 import lib.test_setup.TestBase;
 import org.openqa.selenium.WebElement;
 import utils.Formatter;
-
-import java.util.ArrayList;
-import java.util.stream.Collectors;
 
 /**
  * Pop class representing shop item.
@@ -15,35 +14,40 @@ import java.util.stream.Collectors;
 
 public class ItemTile extends TestBase {
 
-    private final String ADD_TO_CART_BUTTON_FORMAT = "//a[@class = 'product-name' and contains(text(), '%s')]" +
-            "/../..//a[@title = 'Add to cart']";
-    private final String PRICE_LABEL_FORMAT = "//a[@class = 'product-name' and contains(text(), '%s')]" +
-            "/../..//span[@itemprop = 'price']";
-    private final String PRODUCT_CONTAINER_FORMAT = "//a[@class = 'product-name' and contains(text(), '%s')]" +
-            "/../..";
+    Button addToCartButton = new Button().setFormat("//a[@class = 'product-name' and contains(text(), '%s')]" +
+            "/../..//a[@title = 'Add to cart']");
+    Label productContainerLabel = new Label().setFormat("//a[@class = 'product-name' and contains(text(), '%s')]" +
+            "/../..");
+    Label priceLabel = new Label().setFormat("//a[@class = 'product-name' and contains(text(), '%s')]" +
+            "/../..//span[@itemprop = 'price']");
+
 
     public ItemTile hoverProduct(String productName) {
-        taxAction.hover(elX(String.format(PRODUCT_CONTAINER_FORMAT, productName)));
+        productContainerLabel.change(productName);
+        productContainerLabel.hover();
         return this;
     }
 
     public ItemTile addToCart(String productName) {
-        taxAction.click(elX(String.format(ADD_TO_CART_BUTTON_FORMAT, productName)));
+        addToCartButton.change(productName);
+        addToCartButton.click();
         return this;
     }
 
     public Double getPrice(String productName) {
-        return Formatter.formatToDouble(textElx(String.format(PRICE_LABEL_FORMAT, productName)));
+        priceLabel.change(productName);
+        return Formatter.formatToDouble(priceLabel.getText());
     }
 
     public Double getPrice(WebElement webElement) {
         return Formatter.formatToDouble(textElx(webElement));
     }
 
-    public ArrayList<Double> getAllProductsPrices() {
-        return (ArrayList<Double>) ell(String.format(PRICE_LABEL_FORMAT, ""))
-                .stream()
-                .map(this::getPrice)
-                        .collect(Collectors.toList());
-    }
+//    public ArrayList<Double> getAllProductsPrices() {
+//        priceLabel.change("");
+//        return (ArrayList<Double>) ell(String.format(PRICE_LABEL_FORMAT, ""))
+//                .stream()
+//                .map(this::getPrice)
+//                        .collect(Collectors.toList());
+//    }
 }

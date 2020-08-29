@@ -13,13 +13,11 @@ public class Input extends BaseElement implements Hoverable, Inputtable {
     @Override
     public void hover() {
         taxAction.hover(this);
-        taxWait.sleep(500);
     }
 
     @Override
     public void moveTo() {
         taxAction.scrollIntoView(this);
-        taxWait.sleep(500);
     }
 
     @Override
