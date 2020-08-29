@@ -3,14 +3,17 @@ package automation_practice;
 import lib.test_setup.TestSetup;
 import org.testng.annotations.Test;
 import pop.automation_practice.MainPage;
+import pop.automation_practice.ProductsPage;
 import pop.automation_practice.navigation.MainNavBar;
 import pop.automation_practice.navigation.MainNavItems;
 import pop.automation_practice.products.AddedItemSummary;
 import pop.automation_practice.products.CartList;
 import pop.automation_practice.products.ItemTile;
+import pop.automation_practice.products.ProductsSorting;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 import static org.testng.Assert.assertEquals;
 
@@ -89,22 +92,22 @@ public class Tests extends TestSetup {
         }
     }
 
-//    @Test(priority = 5)
-//    public void sortProductsPriceASC() {
-//        openPage(PAGE_URL);
-//        new MainNavBar().chooseMenuItem(MainNavItems.DRESSES);
-//        new ProductsPage().setSorting(ProductsSorting.PRICE_ASC);
-//
-//        ArrayList<Double> allProductsPrices = new ItemTile().getAllProductsPrices();
-//        ArrayList<Double> allProductsPricesSorted = (ArrayList<Double>) allProductsPrices.clone();
-//        Collections.sort(allProductsPricesSorted);
-//
-//        assertEquals(
-//                allProductsPrices,
-//                allProductsPricesSorted,
-//                "Products are not sorted correctly"
-//        );
-//    }
+    @Test(priority = 5)
+    public void sortProductsPriceASC() {
+        openPage(PAGE_URL);
+        new MainNavBar().chooseMenuItem(MainNavItems.DRESSES);
+        new ProductsPage().setSorting(ProductsSorting.PRICE_ASC);
+
+        ArrayList<Double> allProductsPrices = new ItemTile().getAllProductsPrices();
+        ArrayList<Double> allProductsPricesSorted = (ArrayList<Double>) allProductsPrices.clone();
+        Collections.sort(allProductsPricesSorted);
+
+        assertEquals(
+                allProductsPrices,
+                allProductsPricesSorted,
+                "Products are not sorted correctly"
+        );
+    }
 
     private void searchForSpecificProduct(MainPage mainPage, String product) {
         String PRODUCT_ASSERT = "//ul[contains(@class, 'product_list')]" +

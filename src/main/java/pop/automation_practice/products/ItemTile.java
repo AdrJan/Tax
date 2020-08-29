@@ -6,6 +6,9 @@ import lib.test_setup.TestBase;
 import org.openqa.selenium.WebElement;
 import utils.Formatter;
 
+import java.util.ArrayList;
+import java.util.stream.Collectors;
+
 /**
  * Pop class representing shop item.
  *
@@ -43,11 +46,11 @@ public class ItemTile extends TestBase {
         return Formatter.formatToDouble(textElx(webElement));
     }
 
-//    public ArrayList<Double> getAllProductsPrices() {
-//        priceLabel.change("");
-//        return (ArrayList<Double>) ell(String.format(PRICE_LABEL_FORMAT, ""))
-//                .stream()
-//                .map(this::getPrice)
-//                        .collect(Collectors.toList());
-//    }
+    public ArrayList<Double> getAllProductsPrices() {
+        priceLabel.change("");
+        return (ArrayList<Double>) ell(priceLabel.getXpath())
+                .stream()
+                .map(this::getPrice)
+                .collect(Collectors.toList());
+    }
 }
