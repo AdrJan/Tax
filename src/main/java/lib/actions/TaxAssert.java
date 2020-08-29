@@ -19,11 +19,4 @@ public class TaxAssert extends TestBase {
                 "Assert for xpath: " + xpath + "\n" + message
         );
     }
-
-    public void assertTwoDoublesEqual(double double1, double double2) {
-        TaxLogger.info("Assert two doubles equals -> " + double1 + ", " + double2);
-        Assert.assertEquals(
-                double1, double2, DELTA
-        );
-    }
 }

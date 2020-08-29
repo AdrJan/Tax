@@ -8,7 +8,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
 
@@ -30,18 +29,15 @@ public class TestBase {
     }
 
     protected static WebElement el(String xpath) {
-        //taxWait.waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
         return driver.findElement(By.xpath(xpath));
     }
 
     protected static List<WebElement> ell(String xpath) {
-        taxWait.waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
         return driver.findElements(By.xpath(xpath));
     }
 
     protected static void openPage(String url) {
         driver.get(url);
-        taxWait.waitForNoAjaxPending();
     }
 
     protected static String getTitle() {
