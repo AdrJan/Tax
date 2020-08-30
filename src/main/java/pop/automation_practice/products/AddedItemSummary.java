@@ -1,5 +1,6 @@
 package pop.automation_practice.products;
 
+import lib.elements.base_elements.Button;
 import lib.test_setup.TestBase;
 
 /**
@@ -10,7 +11,9 @@ import lib.test_setup.TestBase;
 
 public class AddedItemSummary extends TestBase {
 
+    Button continueButton = new Button("//span[contains(., 'Continue shopping')]");
+
     public void continueShopping() {
-        taxAction.click(elX("//span[contains(., 'Continue shopping')]"));
+        continueButton.click();
     }
 }

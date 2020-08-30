@@ -1,5 +1,7 @@
 package pop.automation_practice;
 
+import lib.elements.base_elements.Button;
+import lib.elements.base_elements.Input;
 import lib.test_setup.TestBase;
 
 /**
@@ -10,9 +12,12 @@ import lib.test_setup.TestBase;
 
 public class MainPage extends TestBase {
 
+    static Input searchInput = new Input("//input[contains(@class, 'search_query')]");
+    static Button searchButton = new Button("//button[@name = 'submit_search']");
+
     public MainPage searchFor(String text) {
-        taxAction.typeText(elX("//input[contains(@class, 'search_query')]"), text);
-        taxAction.click(elX("//button[@name = 'submit_search']"));
+        searchInput.type(text);
+        searchButton.click();
         return this;
     }
 }
