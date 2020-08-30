@@ -14,9 +14,9 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 
 /**
- * Setting method for initializing webdriver before test
+ * Setting everything before test execution.
  *
- * @author Adrian Jankowski
+ * @author adrianjankowski
  */
 
 public class TestSetup extends TestBase {

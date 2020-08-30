@@ -26,19 +26,19 @@ public class ItemTile extends TestBase {
 
 
     public ItemTile hoverProduct(String productName) {
-        productContainerLabel.change(productName);
+        productContainerLabel.fmtChange(productName);
         productContainerLabel.hover();
         return this;
     }
 
     public ItemTile addToCart(String productName) {
-        addToCartButton.change(productName);
+        addToCartButton.fmtChange(productName);
         addToCartButton.click();
         return this;
     }
 
     public Double getPrice(String productName) {
-        priceLabel.change(productName);
+        priceLabel.fmtChange(productName);
         return Formatter.formatToDouble(priceLabel.getText());
     }
 
@@ -47,7 +47,7 @@ public class ItemTile extends TestBase {
     }
 
     public ArrayList<Double> getAllProductsPrices() {
-        priceLabel.change("");
+        priceLabel.fmtChange("");
         return (ArrayList<Double>) ell(priceLabel.getXpath())
                 .stream()
                 .map(this::getPrice)

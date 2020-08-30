@@ -1,10 +1,16 @@
 package lib.elements.base_elements;
 
 import lib.elements.BaseElement;
-import lib.elements.interactions.Hoverable;
 import lib.elements.interactions.Inputtable;
+import lib.elements.interactions.Visible;
 
-public class Input extends BaseElement implements Hoverable, Inputtable {
+/**
+ * Represantation of input as a class.
+ *
+ * @author adrianjankowski
+ */
+
+public class Input extends BaseElement implements Visible, Inputtable {
 
     public Input(String xpath) {
         super(el(xpath), xpath);

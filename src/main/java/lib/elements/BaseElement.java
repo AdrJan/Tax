@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 /**
  * Wrapper for WebElement -> WebElement containing its XPath.
  *
- * @author Adrian Jankowski
+ * @author adrianjankowski
  */
 
 public class BaseElement extends TestBase {

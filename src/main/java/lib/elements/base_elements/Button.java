@@ -3,9 +3,15 @@ package lib.elements.base_elements;
 import lib.elements.BaseElement;
 import lib.elements.interactions.Clickable;
 import lib.elements.interactions.Formattable;
-import lib.elements.interactions.Hoverable;
+import lib.elements.interactions.Visible;
 
-public class Button extends BaseElement implements Hoverable, Clickable, Formattable<Button> {
+/**
+ * Representation of button as a class.
+ *
+ * @author adrianjankowski
+ */
+
+public class Button extends BaseElement implements Visible, Clickable, Formattable<Button> {
 
     public Button(String xpath) {
         super(el(xpath), xpath);
@@ -37,8 +43,8 @@ public class Button extends BaseElement implements Hoverable, Clickable, Formatt
     }
 
     @Override
-    public Button change(String... change) {
-        String xpath = String.format(xpathFormat, change);
+    public Button fmtChange(String... changes) {
+        String xpath = String.format(xpathFormat, changes);
         setWE(el(xpath));
         setXpath(xpath);
         return this;

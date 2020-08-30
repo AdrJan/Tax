@@ -2,6 +2,12 @@ package lib.manager.driver_manager;
 
 import org.openqa.selenium.WebDriver;
 
+/**
+ * Basic implementation of DriverManager.
+ *
+ * @author adrianjankowski
+ */
+
 public abstract class DriverManager {
 
     protected WebDriver driver;

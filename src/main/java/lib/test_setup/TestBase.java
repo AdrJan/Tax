@@ -3,9 +3,7 @@ package lib.test_setup;
 import lib.actions.TaxAction;
 import lib.actions.TaxAssert;
 import lib.actions.TaxWait;
-import lib.elements.BaseElement;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -14,7 +12,7 @@ import java.util.List;
 /**
  * Wrapped webdriver basic methods for easier usage.
  *
- * @author Adrian Jankowski
+ * @author adrianjankowski
  */
 
 public class TestBase {
@@ -23,10 +21,6 @@ public class TestBase {
     protected static TaxAction taxAction;
     protected static TaxAssert taxAssert;
     protected static TaxWait taxWait;
-
-    protected static BaseElement elX(String xpath) {
-        return new BaseElement(el(xpath), xpath);
-    }
 
     protected static WebElement el(String xpath) {
         return driver.findElement(By.xpath(xpath));
@@ -48,24 +42,7 @@ public class TestBase {
         return driver.getCurrentUrl();
     }
 
-    protected static String textElx(String xpath) {
-        return elX(xpath).getWE().getText();
-    }
-
     protected static String textElx(WebElement webElement) {
         return webElement.getAttribute("innerText");
-    }
-
-    protected static void typeTextElx(WebElement webElement, String text) {
-        webElement.sendKeys(text);
-    }
-
-    protected static void typeTextElx(String xpath, String text) {
-        elX(xpath).getWE().sendKeys(text);
-    }
-
-    protected static void submitTextElx(BaseElement baseElement, String text) {
-        typeTextElx(baseElement.getWE(), text);
-        baseElement.getWE().sendKeys(Keys.ENTER);
     }
 }

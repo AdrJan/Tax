@@ -27,6 +27,8 @@ public class Tests extends TestSetup {
 
     private final static String PAGE_URL = "http://automationpractice.com/index.php";
 
+    // *** TESTS ***
+
     @Test(priority = 1)
     public void smokeTest() {
         openPage(PAGE_URL);
@@ -108,6 +110,8 @@ public class Tests extends TestSetup {
                 "Products are not sorted correctly"
         );
     }
+
+    // *** METHODS ***
 
     private void searchForSpecificProduct(MainPage mainPage, String product) {
         String PRODUCT_ASSERT = "//ul[contains(@class, 'product_list')]" +

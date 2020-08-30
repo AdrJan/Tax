@@ -2,11 +2,16 @@ package lib.elements.base_elements;
 
 import lib.elements.BaseElement;
 import lib.elements.interactions.Formattable;
-import lib.elements.interactions.Hoverable;
 import lib.elements.interactions.Textable;
+import lib.elements.interactions.Visible;
 
-public class Label extends BaseElement implements Hoverable, Textable, Formattable<Label> {
+/**
+ * Represantation of label as a class.
+ *
+ * @author adrianjankowski
+ */
 
+public class Label extends BaseElement implements Visible, Textable, Formattable<Label> {
 
     public Label(String xpath) {
         super(el(xpath), xpath);
@@ -38,8 +43,8 @@ public class Label extends BaseElement implements Hoverable, Textable, Formattab
     }
 
     @Override
-    public Label change(String... change) {
-        String xpath = String.format(xpathFormat, change);
+    public Label fmtChange(String... changes) {
+        String xpath = String.format(xpathFormat, changes);
         setWE(el(xpath));
         setXpath(xpath);
         return this;

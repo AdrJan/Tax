@@ -1,7 +1,7 @@
 package pop.automation_practice.navigation;
 
 /**
- * Enum for specific categories in main menu of page - for page object pattern class.
+ * Enum for specific categories in main menu of page.
  *
  * @author Adrian Jankowski
  */
