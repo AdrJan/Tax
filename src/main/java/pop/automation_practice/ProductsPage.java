@@ -12,13 +12,12 @@ import pop.automation_practice.products.ProductsSorting;
 
 public class ProductsPage extends TestBase {
 
-    static Button sortingButton = new Button("//select[@id = 'selectProductSort']/..");
-
-    private final String PRODUCT_LABEL_FORMAT = "//option[@value = '%s']";
+    Button sortingButton = new Button("//select[@id = 'selectProductSort']/..");
+    Button productLabel = new Button().setFormat("//option[@value = '%s']");
 
     public ProductsPage setSorting(ProductsSorting productsSorting) {
         sortingButton.click();
-        new Button(String.format(PRODUCT_LABEL_FORMAT, productsSorting.getOptionValue())).click();
+        productLabel.fmtChange(productsSorting.getOptionValue());
         return this;
     }
 }
