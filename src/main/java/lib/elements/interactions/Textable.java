@@ -1,8 +1,8 @@
 package lib.elements.interactions;
 
 /**
- * Interface making specific element contains text,
- * that can be 'grabbed'.
+ * Interface making specific element contains text
+ * which can be 'grabbed'.
  *
  * @author adrianjankowski
  */
