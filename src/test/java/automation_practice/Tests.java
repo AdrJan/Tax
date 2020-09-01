@@ -29,13 +29,13 @@ public class Tests extends TestSetup {
 
     // *** TESTS ***
 
-    @Test(priority = 1)
+    @Test(priority = 1, description = "Checking if page is up.")
     public void smokeTest() {
         openPage(PAGE_URL);
         assertEquals("My Store", getTitle());
     }
 
-    @Test(priority = 2)
+    @Test(priority = 2, description = "Checking if submenus are working correctly.")
     public void iterateThroughMenuItems() {
         String ASSERT_FORMAT = "//div[contains(@class, 'cat_desc') and contains(., '%s')]";
         MainNavBar mainNavBar = new MainNavBar();
@@ -50,7 +50,7 @@ public class Tests extends TestSetup {
         }
     }
 
-    @Test(priority = 3)
+    @Test(priority = 3, description = "Adding product to shopping cart.")
     public void addToCart() {
         ItemTile itemTile = new ItemTile();
         AddedItemSummary addedItemSummary = new AddedItemSummary();
@@ -68,7 +68,7 @@ public class Tests extends TestSetup {
 
         openPage(PAGE_URL);
         new MainNavBar().chooseMenuItem(MainNavItems.WOMEN);
-        for(String productName : products) {
+        for (String productName : products) {
             sum += itemTile.getPrice(productName);
             itemTile.hoverProduct(productName).addToCart(productName);
             addedItemSummary.continueShopping();
@@ -82,7 +82,7 @@ public class Tests extends TestSetup {
         );
     }
 
-    @Test(priority = 4)
+    @Test(priority = 4, description = "Searching for specific product.")
     public void searchForProducts() {
         MainPage mainPage = new MainPage();
 
@@ -94,7 +94,7 @@ public class Tests extends TestSetup {
         }
     }
 
-    @Test(priority = 5)
+    @Test(priority = 5, description = "Sorting products in ascended mode.")
     public void sortProductsPriceASC() {
         openPage(PAGE_URL);
         new MainNavBar().chooseMenuItem(MainNavItems.DRESSES);
