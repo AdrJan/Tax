@@ -36,6 +36,11 @@ public class Tests extends TestSetup {
     public void smokeTest() {
         openPage(PAGE_URL);
         assertEquals("My Store", getTitle());
+
+        taxAssert.assertXpath(
+                "//div[@id = 'page']",
+                "Main page is not displayed"
+        );
     }
 
     @Test(priority = 2, description = "Checking if submenus are working correctly.")
