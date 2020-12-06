@@ -14,11 +14,11 @@ import lib.elements.interactions.Visible;
 public class Button extends BaseElement implements Visible, Clickable, Formattable<Button> {
 
     public Button(String xpath) {
-        super(el(xpath), xpath);
+        super(xpath);
     }
 
     public Button() {
-        super(null, null);
+        super(null);
     }
 
     @Override

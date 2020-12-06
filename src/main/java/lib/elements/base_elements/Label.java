@@ -14,11 +14,11 @@ import lib.elements.interactions.Visible;
 public class Label extends BaseElement implements Visible, Textable, Formattable<Label> {
 
     public Label(String xpath) {
-        super(el(xpath), xpath);
+        super(xpath);
     }
 
     public Label() {
-        super(null, null);
+        super(null);
     }
 
     @Override

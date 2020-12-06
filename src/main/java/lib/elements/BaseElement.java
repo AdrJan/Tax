@@ -15,9 +15,8 @@ public class BaseElement extends TestBase {
     protected String xpathFormat;
     private WebElement webElement;
 
-    public BaseElement(WebElement webElement, String xpath) {
+    public BaseElement(String xpath) {
         this.xpath = xpath;
-        this.webElement = webElement;
     }
 
     public WebElement getWE() {

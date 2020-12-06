@@ -1,7 +1,5 @@
 package pop.automation_practice.products;
 
-import lombok.Getter;
-
 public enum ProductsSorting {
     PRICE_ASC("price:asc"),
     PRICE_DESC("price:desc"),

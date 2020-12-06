@@ -13,7 +13,7 @@ import lib.elements.interactions.Visible;
 public class Input extends BaseElement implements Visible, Inputtable {
 
     public Input(String xpath) {
-        super(el(xpath), xpath);
+        super(xpath);
     }
 
     @Override

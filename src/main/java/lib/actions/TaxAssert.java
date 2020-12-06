@@ -10,8 +10,6 @@ import org.testng.Assert;
 
 public class TaxAssert extends TestBase {
 
-    private static final double DELTA = 0.001;
-
     public void assertXpath(String xpath, String message) {
         TaxLogger.info("Assert xpath -> " + xpath);
         Assert.assertTrue(

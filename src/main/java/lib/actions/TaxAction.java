@@ -42,7 +42,6 @@ public class TaxAction extends Actions {
             }
         }
         taxWait.waitForNoAjaxPending();
-        taxWait.sleep(500);
     }
 
     public void scrollIntoView(BaseElement baseElement) {
@@ -64,7 +63,6 @@ public class TaxAction extends Actions {
                 this.moveToElement(baseElement.getWE()).perform();
             }
         }
-        taxWait.sleep(500);
     }
 
     public void typeText(BaseElement baseElement, String text) {
@@ -83,7 +81,6 @@ public class TaxAction extends Actions {
                 sendKeys(baseElement.getWE(), text).perform();
             }
         }
-        taxWait.sleep(500);
     }
 
     public String getText(BaseElement baseElement) {
