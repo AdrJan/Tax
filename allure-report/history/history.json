@@ -1,0 +1,119 @@
+{
+  "2006b0dc9283e92370151e79f034c049" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "3209c91241317b33",
+      "status" : "passed",
+      "time" : {
+        "start" : 1607257853740,
+        "stop" : 1607257860221,
+        "duration" : 6481
+      }
+    } ]
+  },
+  "d86ae3f08679655f7f7d88f8d9ce9411" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "e93dec8cba27c966",
+      "status" : "broken",
+      "statusDetails" : "session not created: This version of ChromeDriver only supports Chrome version 85\nBuild info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'\nSystem info: host: 'MacBook-Pro-Adrian.local', ip: '2a02:a312:613c:e880:9d1e:94e4:7e2f:7dfb%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.7', java.version: '11.0.8'\nDriver info: driver.version: ChromeDriver\nremote stacktrace: 0   chromedriver                        0x000000010989d1b9 chromedriver + 4911545\n1   chromedriver                        0x000000010983ce03 chromedriver + 4517379\n2   chromedriver                        0x00000001094aadc6 chromedriver + 773574\n3   chromedriver                        0x0000000109406452 chromedriver + 99410\n4   chromedriver                        0x0000000109402d6f chromedriver + 85359\n5   chromedriver                        0x0000000109431716 chromedriver + 276246\n6   chromedriver                        0x000000010942e723 chromedriver + 263971\n7   chromedriver                        0x0000000109408720 chromedriver + 108320\n8   chromedriver                        0x0000000109409693 chromedriver + 112275\n9   chromedriver                        0x0000000109865f72 chromedriver + 4685682\n10  chromedriver                        0x0000000109873b3a chromedriver + 4741946\n11  chromedriver                        0x0000000109873801 chromedriver + 4741121\n12  chromedriver                        0x000000010984925e chromedriver + 4567646\n13  chromedriver                        0x0000000109874061 chromedriver + 4743265\n14  chromedriver                        0x000000010985ad0a chromedriver + 4640010\n15  chromedriver                        0x000000010988d0ba chromedriver + 4845754\n16  chromedriver                        0x00000001098a3387 chromedriver + 4936583\n17  libsystem_pthread.dylib             0x00007fff6ed02109 _pthread_start + 148\n18  libsystem_pthread.dylib             0x00007fff6ecfdb8b thread_start + 15\n",
+      "time" : {
+        "start" : 1607255359938,
+        "stop" : 1607255359939,
+        "duration" : 1
+      }
+    } ]
+  },
+  "251ac866d648d04bb0b332cee44a8583" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "9e2eae4d41ea7e99",
+      "status" : "failed",
+      "statusDetails" : "Products are not sorted correctly: Lists differ at element [0]: 16.4 != 26.0 expected [16.4] but found [26.0]",
+      "time" : {
+        "start" : 1607257888684,
+        "stop" : 1607257892956,
+        "duration" : 4272
+      }
+    } ]
+  },
+  "bd42ff4787a8bf0f5abf3d85dba1728c" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "4f70dcbaffb59aa8",
+      "status" : "failed",
+      "statusDetails" : "Not every product on list is Dress expected [5] but found [7]",
+      "time" : {
+        "start" : 1607257880295,
+        "stop" : 1607257888666,
+        "duration" : 8371
+      }
+    } ]
+  },
+  "36c9aef14ce60f9eccb0300089026354" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "99f62abc018ea993",
+      "status" : "passed",
+      "time" : {
+        "start" : 1607257870722,
+        "stop" : 1607257880282,
+        "duration" : 9560
+      }
+    } ]
+  },
+  "41f9336e1669ee342227ebad30e63328" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "39e6183c14e70c96",
+      "status" : "passed",
+      "time" : {
+        "start" : 1607257860250,
+        "stop" : 1607257870699,
+        "duration" : 10449
+      }
+    } ]
+  }
+}

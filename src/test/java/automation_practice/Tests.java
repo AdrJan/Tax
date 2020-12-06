@@ -1,6 +1,8 @@
 package automation_practice;
 
+import lib.test_setup.TestListener;
 import lib.test_setup.TestSetup;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pop.automation_practice.MainPage;
 import pop.automation_practice.ProductsPage;
@@ -23,6 +25,7 @@ import static org.testng.Assert.assertEquals;
  * @author Adrian Jankowski
  */
 
+@Listeners(TestListener.class)
 public class Tests extends TestSetup {
 
     private final static String PAGE_URL = "http://automationpractice.com/index.php";
@@ -50,7 +53,7 @@ public class Tests extends TestSetup {
         }
     }
 
-    @Test(priority = 3, description = "Adding product to shopping cart.")
+    @org.testng.annotations.Test(priority = 3, description = "Adding product to shopping cart.")
     public void addToCart() {
         ItemTile itemTile = new ItemTile();
         AddedItemSummary addedItemSummary = new AddedItemSummary();

@@ -1,5 +1,6 @@
 package pop.automation_practice.products;
 
+import io.qameta.allure.Step;
 import lib.elements.base_elements.Button;
 import lib.elements.base_elements.Label;
 import lib.test_setup.TestBase;
@@ -11,15 +12,18 @@ public class CartList extends TestBase {
     Label shippingCostLabel = new Label("//span[contains(@class, 'cart_block_shipping_cost')]");
     Label totalCostLabel = new Label("//span[contains(@class, 'cart_block_total')]");
 
+    @Step("User expands shopping cart.")
     public CartList expandCart() {
         cartButton.hover();
         return this;
     }
 
+    @Step("Shipping cost is checked.")
     public Double getShippingCost() {
         return Formatter.formatToDouble(shippingCostLabel.getText());
     }
 
+    @Step("Total cost is checked.")
     public Double getTotalCost() {
         return Formatter.formatToDouble(totalCostLabel.getText());
     }

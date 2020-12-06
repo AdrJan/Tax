@@ -1,0 +1,61 @@
+[ {
+  "uid" : "99f62abc018ea993",
+  "name" : "Adding product to shopping cart.",
+  "time" : {
+    "start" : 1607257870722,
+    "stop" : 1607257880282,
+    "duration" : 9560
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "e93dec8cba27c966",
+  "name" : "setUpSuite",
+  "time" : {
+    "start" : 1607255359938,
+    "stop" : 1607255359939,
+    "duration" : 1
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "4f70dcbaffb59aa8",
+  "name" : "Searching for specific product.",
+  "time" : {
+    "start" : 1607257880295,
+    "stop" : 1607257888666,
+    "duration" : 8371
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "9e2eae4d41ea7e99",
+  "name" : "Sorting products in ascended mode.",
+  "time" : {
+    "start" : 1607257888684,
+    "stop" : 1607257892956,
+    "duration" : 4272
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "3209c91241317b33",
+  "name" : "Checking if page is up.",
+  "time" : {
+    "start" : 1607257853740,
+    "stop" : 1607257860221,
+    "duration" : 6481
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "39e6183c14e70c96",
+  "name" : "Checking if submenus are working correctly.",
+  "time" : {
+    "start" : 1607257860250,
+    "stop" : 1607257870699,
+    "duration" : 10449
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

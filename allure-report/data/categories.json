@@ -1,0 +1,64 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "name" : "categories",
+  "children" : [ {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "session not created: This version of ChromeDriver only supports Chrome version 85\nBuild info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'\nSystem info: host: 'MacBook-Pro-Adrian.local', ip: '2a02:a312:613c:e880:9d1e:94e4:7e2f:7dfb%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.7', java.version: '11.0.8'\nDriver info: driver.version: ChromeDriver\nremote stacktrace: 0   chromedriver                        0x000000010989d1b9 chromedriver + 4911545\n1   chromedriver                        0x000000010983ce03 chromedriver + 4517379\n2   chromedriver                        0x00000001094aadc6 chromedriver + 773574\n3   chromedriver                        0x0000000109406452 chromedriver + 99410\n4   chromedriver                        0x0000000109402d6f chromedriver + 85359\n5   chromedriver                        0x0000000109431716 chromedriver + 276246\n6   chromedriver                        0x000000010942e723 chromedriver + 263971\n7   chromedriver                        0x0000000109408720 chromedriver + 108320\n8   chromedriver                        0x0000000109409693 chromedriver + 112275\n9   chromedriver                        0x0000000109865f72 chromedriver + 4685682\n10  chromedriver                        0x0000000109873b3a chromedriver + 4741946\n11  chromedriver                        0x0000000109873801 chromedriver + 4741121\n12  chromedriver                        0x000000010984925e chromedriver + 4567646\n13  chromedriver                        0x0000000109874061 chromedriver + 4743265\n14  chromedriver                        0x000000010985ad0a chromedriver + 4640010\n15  chromedriver                        0x000000010988d0ba chromedriver + 4845754\n16  chromedriver                        0x00000001098a3387 chromedriver + 4936583\n17  libsystem_pthread.dylib             0x00007fff6ed02109 _pthread_start + 148\n18  libsystem_pthread.dylib             0x00007fff6ecfdb8b thread_start + 15\n",
+      "children" : [ {
+        "name" : "setUpSuite",
+        "uid" : "e93dec8cba27c966",
+        "parentUid" : "7d4798a23262a35a68138934461b70ea",
+        "status" : "broken",
+        "time" : {
+          "start" : 1607255359938,
+          "stop" : 1607255359939,
+          "duration" : 1
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "7d4798a23262a35a68138934461b70ea"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  }, {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "Not every product on list is Dress expected [5] but found [7]",
+      "children" : [ {
+        "name" : "Searching for specific product.",
+        "uid" : "4f70dcbaffb59aa8",
+        "parentUid" : "a38efd5b390c8c34fa01bfccbca58c65",
+        "status" : "failed",
+        "time" : {
+          "start" : 1607257880295,
+          "stop" : 1607257888666,
+          "duration" : 8371
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "a38efd5b390c8c34fa01bfccbca58c65"
+    }, {
+      "name" : "Products are not sorted correctly: Lists differ at element [0]: 16.4 != 26.0 expected [16.4] but found [26.0]",
+      "children" : [ {
+        "name" : "Sorting products in ascended mode.",
+        "uid" : "9e2eae4d41ea7e99",
+        "parentUid" : "881bb65f4824d276f378b8dbbe52177a",
+        "status" : "failed",
+        "time" : {
+          "start" : 1607257888684,
+          "stop" : 1607257892956,
+          "duration" : 4272
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "881bb65f4824d276f378b8dbbe52177a"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ]
+}

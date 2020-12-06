@@ -1,5 +1,6 @@
 package pop.automation_practice.products;
 
+import io.qameta.allure.Step;
 import lib.elements.base_elements.Button;
 import lib.elements.base_elements.Label;
 import lib.test_setup.TestBase;
@@ -24,19 +25,21 @@ public class ItemTile extends TestBase {
     Label priceLabel = new Label().setFormat("//a[@class = 'product-name' and contains(text(), '%s')]" +
             "/../..//span[@itemprop = 'price']");
 
-
+    @Step("User hovers mouse above product {0}.")
     public ItemTile hoverProduct(String productName) {
         productContainerLabel.fmtChange(productName);
         productContainerLabel.hover();
         return this;
     }
 
+    @Step("User adds product {0} to cart.")
     public ItemTile addToCart(String productName) {
         addToCartButton.fmtChange(productName);
         addToCartButton.click();
         return this;
     }
 
+    @Step("Product {0} price is checked.")
     public Double getPrice(String productName) {
         priceLabel.fmtChange(productName);
         return Formatter.formatToDouble(priceLabel.getText());
@@ -46,6 +49,7 @@ public class ItemTile extends TestBase {
         return Formatter.formatToDouble(textElx(webElement));
     }
 
+    @Step("All products prices are checked.")
     public ArrayList<Double> getAllProductsPrices() {
         priceLabel.fmtChange("");
         return (ArrayList<Double>) ell(priceLabel.getXpath())

@@ -1,0 +1,124 @@
+{
+  "uid" : "ecdf8b60ae9667b6",
+  "name" : "Checking if page is up.",
+  "fullName" : "automation_practice.Tests.smokeTest",
+  "historyId" : "2006b0dc9283e92370151e79f034c049",
+  "time" : {
+    "start" : 1607256631460,
+    "stop" : 1607256635712,
+    "duration" : 4252
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "setUpTest",
+    "time" : {
+      "start" : 1607256631353,
+      "stop" : 1607256631359,
+      "duration" : 6
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "setUpSuite",
+    "time" : {
+      "start" : 1607256628532,
+      "stop" : 1607256631323,
+      "duration" : 2791
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "afterStages" : [ {
+    "name" : "testClose",
+    "time" : {
+      "start" : 1607256635736,
+      "stop" : 1607256635740,
+      "duration" : 4
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "tearDown",
+    "time" : {
+      "start" : 1607256710211,
+      "stop" : 1607256710346,
+      "duration" : 135
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "automation_practice.Tests"
+  }, {
+    "name" : "testClass",
+    "value" : "automation_practice.Tests"
+  }, {
+    "name" : "testMethod",
+    "value" : "smokeTest"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Default Suite"
+  }, {
+    "name" : "suite",
+    "value" : "tax"
+  }, {
+    "name" : "subSuite",
+    "value" : "automation_practice.Tests"
+  }, {
+    "name" : "host",
+    "value" : "MacBook-Pro-Adrian.local"
+  }, {
+    "name" : "thread",
+    "value" : "1291@MacBook-Pro-Adrian.local.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "testng"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "ecdf8b60ae9667b6.json",
+  "parameterValues" : [ ]
+}

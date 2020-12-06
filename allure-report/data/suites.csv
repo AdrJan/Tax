@@ -1,0 +1,7 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Sun Dec 06 13:31:10 CET 2020","Sun Dec 06 13:31:20 CET 2020","9560","Default Suite","tax","automation_practice.Tests","automation_practice.Tests","addToCart","Adding product to shopping cart.",""
+"broken","Sun Dec 06 12:49:19 CET 2020","Sun Dec 06 12:49:19 CET 2020","1","Default Suite","tax","automation_practice.Tests","automation_practice.Tests","setUpSuite","setUpSuite",""
+"failed","Sun Dec 06 13:31:20 CET 2020","Sun Dec 06 13:31:28 CET 2020","8371","Default Suite","tax","automation_practice.Tests","automation_practice.Tests","searchForProducts","Searching for specific product.",""
+"failed","Sun Dec 06 13:31:28 CET 2020","Sun Dec 06 13:31:32 CET 2020","4272","Default Suite","tax","automation_practice.Tests","automation_practice.Tests","sortProductsPriceASC","Sorting products in ascended mode.",""
+"passed","Sun Dec 06 13:30:53 CET 2020","Sun Dec 06 13:31:00 CET 2020","6481","Default Suite","tax","automation_practice.Tests","automation_practice.Tests","smokeTest","Checking if page is up.",""
+"passed","Sun Dec 06 13:31:00 CET 2020","Sun Dec 06 13:31:10 CET 2020","10449","Default Suite","tax","automation_practice.Tests","automation_practice.Tests","iterateThroughMenuItems","Checking if submenus are working correctly.",""
