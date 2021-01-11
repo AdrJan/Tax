@@ -1,7 +1,7 @@
 package automation_practice;
 
-import lib.test_setup.TestListener;
-import lib.test_setup.TestSetup;
+import core.lib.test_setup.TestListener;
+import core.lib.test_setup.TestSetup;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pop.automation_practice.MainPage;
@@ -16,6 +16,7 @@ import pop.automation_practice.products.ProductsSorting;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 
 import static org.testng.Assert.assertEquals;
 
@@ -34,8 +35,8 @@ public class Tests extends TestSetup {
 
     @Test(priority = 1, description = "Checking if page is up.")
     public void smokeTest() {
-        openPage(PAGE_URL);
-        assertEquals("My Store", getTitle());
+        sw.openPage(PAGE_URL);
+        assertEquals(sw.getTitle(), "My Store");
 
         taxAssert.assertXpath(
                 "//div[@id = 'page']",
@@ -48,7 +49,7 @@ public class Tests extends TestSetup {
         String ASSERT_FORMAT = "//div[contains(@class, 'cat_desc') and contains(., '%s')]";
         MainNavBar mainNavBar = new MainNavBar();
 
-        openPage(PAGE_URL);
+        sw.openPage(PAGE_URL);
         for (MainNavItems mainNavItem : MainNavItems.values()) {
             mainNavBar.chooseMenuItem(mainNavItem);
             taxAssert.assertXpath(
@@ -74,7 +75,7 @@ public class Tests extends TestSetup {
                 "Blouse"
         ));
 
-        openPage(PAGE_URL);
+        sw.openPage(PAGE_URL);
         new MainNavBar().chooseMenuItem(MainNavItems.WOMEN);
         for (String productName : products) {
             sum += itemTile.getPrice(productName);
@@ -94,7 +95,7 @@ public class Tests extends TestSetup {
     public void searchForProducts() {
         MainPage mainPage = new MainPage();
 
-        openPage(PAGE_URL);
+        sw.openPage(PAGE_URL);
 
         ArrayList<String> products = new ArrayList<>(Arrays.asList("Blouse", "T-shirt", "Dress"));
         for (String product : products) {
@@ -104,12 +105,13 @@ public class Tests extends TestSetup {
 
     @Test(priority = 5, description = "Sorting products in ascended mode.")
     public void sortProductsPriceASC() {
-        openPage(PAGE_URL);
+        sw.openPage(PAGE_URL);
         new MainNavBar().chooseMenuItem(MainNavItems.DRESSES);
         new ProductsPage().setSorting(ProductsSorting.PRICE_ASC);
 
-        ArrayList<Double> allProductsPrices = new ItemTile().getAllProductsPrices();
-        ArrayList<Double> allProductsPricesSorted = (ArrayList<Double>) allProductsPrices.clone();
+        List<Double> allProductsPrices = new ItemTile().getAllProductsPrices();
+        List<Double> allProductsPricesSorted = new ArrayList<>();
+        Collections.copy(allProductsPrices, allProductsPricesSorted);
         Collections.sort(allProductsPricesSorted);
 
         assertEquals(
@@ -126,8 +128,8 @@ public class Tests extends TestSetup {
                 "//a[@class = 'product-name' and contains(., '%s')]";
         mainPage.searchFor(product);
         assertEquals(
-                ell(String.format(PRODUCT_ASSERT, "")).size(),
-                ell(String.format(PRODUCT_ASSERT, product)).size(),
+                sw.ell(String.format(PRODUCT_ASSERT, "")).size(),
+                sw.ell(String.format(PRODUCT_ASSERT, product)).size(),
                 "Not every product on list is " + product
         );
     }

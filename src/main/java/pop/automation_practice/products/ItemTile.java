@@ -1,13 +1,13 @@
 package pop.automation_practice.products;
 
+import core.lib.elements.base_elements.Button;
+import core.lib.elements.base_elements.Label;
+import core.lib.test_setup.TestBase;
+import core.utils.Formatter;
 import io.qameta.allure.Step;
-import lib.elements.base_elements.Button;
-import lib.elements.base_elements.Label;
-import lib.test_setup.TestBase;
 import org.openqa.selenium.WebElement;
-import utils.Formatter;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Collectors;
 
 /**
@@ -18,12 +18,11 @@ import java.util.stream.Collectors;
 
 public class ItemTile extends TestBase {
 
-    Button addToCartButton = new Button().setFormat("//a[@class = 'product-name' and contains(text(), '%s')]" +
-            "/../..//a[@title = 'Add to cart']");
-    Label productContainerLabel = new Label().setFormat("//a[@class = 'product-name' and contains(text(), '%s')]" +
-            "/../..");
-    Label priceLabel = new Label().setFormat("//a[@class = 'product-name' and contains(text(), '%s')]" +
-            "/../..//span[@itemprop = 'price']");
+    private static final String PRODUCT_A_XPATH = "//a[@class = 'product-name' and contains(text(), '%s')]";
+
+    Button addToCartButton = new Button().setFormat(PRODUCT_A_XPATH + "/../..//a[@title = 'Add to cart']");
+    Label productContainerLabel = new Label().setFormat(PRODUCT_A_XPATH + "/../..");
+    Label priceLabel = new Label().setFormat(PRODUCT_A_XPATH + "/../..//span[@itemprop = 'price']");
 
     @Step("User hovers mouse above product {0}.")
     public ItemTile hoverProduct(String productName) {
@@ -46,13 +45,13 @@ public class ItemTile extends TestBase {
     }
 
     public Double getPrice(WebElement webElement) {
-        return Formatter.formatToDouble(textElx(webElement));
+        return Formatter.formatToDouble(sw.textElx(webElement));
     }
 
     @Step("All products prices are checked.")
-    public ArrayList<Double> getAllProductsPrices() {
+    public List<Double> getAllProductsPrices() {
         priceLabel.fmtChange("");
-        return (ArrayList<Double>) ell(priceLabel.getXpath())
+        return sw.ell(priceLabel.getXpath())
                 .stream()
                 .map(this::getPrice)
                 .collect(Collectors.toList());

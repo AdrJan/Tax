@@ -1,7 +1,7 @@
 package pop.automation_practice.navigation;
 
 /**
- * Enum for specific categories in main menu of page.
+ * Enum for specific categories in main menu.
  *
  * @author Adrian Jankowski
  */
@@ -11,7 +11,7 @@ public enum MainNavItems {
     DRESSES("Dresses"),
     T_SHIRTS("T-shirts");
 
-    private String label;
+    private final String label;
 
     MainNavItems(String label) {
         this.label = label;

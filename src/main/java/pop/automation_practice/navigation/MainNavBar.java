@@ -1,8 +1,8 @@
 package pop.automation_practice.navigation;
 
+import core.lib.elements.base_elements.Button;
+import core.lib.test_setup.TestBase;
 import io.qameta.allure.Step;
-import lib.elements.base_elements.Button;
-import lib.test_setup.TestBase;
 
 /**
  * Page object pattern class for main navigation bar.

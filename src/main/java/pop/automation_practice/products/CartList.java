@@ -1,10 +1,10 @@
 package pop.automation_practice.products;
 
+import core.lib.elements.base_elements.Button;
+import core.lib.elements.base_elements.Label;
+import core.lib.test_setup.TestBase;
+import core.utils.Formatter;
 import io.qameta.allure.Step;
-import lib.elements.base_elements.Button;
-import lib.elements.base_elements.Label;
-import lib.test_setup.TestBase;
-import utils.Formatter;
 
 public class CartList extends TestBase {
 
