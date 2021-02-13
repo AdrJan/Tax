@@ -7,7 +7,7 @@ package core.lib.elements.interactions;
  */
 
 public interface Visible {
-    void hover();
 
+    void hover();
     void moveTo();
 }

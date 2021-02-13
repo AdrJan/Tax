@@ -7,5 +7,6 @@ package core.lib.elements.interactions;
  */
 
 public interface Clickable {
+
     void click();
 }

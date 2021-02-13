@@ -11,7 +11,7 @@ import core.lib.elements.BaseElement;
  */
 
 public interface Formattable<T extends BaseElement> {
-    T setFormat(String xpath);
 
+    T setFormat(String xpath);
     T fmtChange(String... changes);
 }

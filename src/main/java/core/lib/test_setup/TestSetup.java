@@ -4,6 +4,7 @@ import core.lib.manager.driver_manager.Browsers;
 import core.lib.manager.driver_manager.DriverManager;
 import core.lib.manager.driver_manager.DriverManagerFactory;
 import core.lib.manager.logger.TaxLogger;
+import core.lib.test_base.TestBase;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;

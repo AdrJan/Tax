@@ -1,6 +1,6 @@
 package core.lib.elements;
 
-import core.lib.test_setup.TestBase;
+import core.lib.test_base.TestBase;
 import org.openqa.selenium.WebElement;
 
 /**

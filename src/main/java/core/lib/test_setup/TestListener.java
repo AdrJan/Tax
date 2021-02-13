@@ -1,13 +1,14 @@
 package core.lib.test_setup;
 
 import core.lib.manager.logger.TaxLogger;
+import core.lib.test_base.TestBase;
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-public class TestListener extends TestSetup implements ITestListener {
+public class TestListener extends TestBase implements ITestListener {
 
     @Override
     public void onTestFailure(ITestResult result) {

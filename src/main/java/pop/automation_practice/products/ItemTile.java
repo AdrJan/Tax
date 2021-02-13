@@ -2,7 +2,7 @@ package pop.automation_practice.products;
 
 import core.lib.elements.base_elements.Button;
 import core.lib.elements.base_elements.Label;
-import core.lib.test_setup.TestBase;
+import core.lib.test_base.TestBase;
 import core.utils.Formatter;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;

@@ -1,8 +1,9 @@
-package core.lib.test_setup;
+package core.lib.test_base;
 
 import core.lib.actions.TaxAction;
 import core.lib.actions.TaxAssert;
 import core.lib.actions.TaxWait;
+import core.lib.manager.logger.TaxLogger;
 import org.openqa.selenium.WebDriver;
 
 /**
@@ -14,21 +15,17 @@ import org.openqa.selenium.WebDriver;
 public abstract class TestBase {
 
     protected static SeleniumWrapper sw;
-
     protected static WebDriver driver;
-
-    protected TestBase() {
-
-    }
 
     protected static TaxAction taxAction;
     protected static TaxAssert taxAssert;
     protected static TaxWait taxWait;
 
     protected static void init(WebDriver driver) {
+        TaxLogger.info("Initializing TestBase.");
         sw = new SeleniumWrapper(driver);
-        taxAction = new TaxAction(driver);
         taxWait = new TaxWait(driver);
-        taxAssert = new TaxAssert();
+        taxAction = new TaxAction(driver, taxWait);
+        taxAssert = new TaxAssert(sw);
     }
 }

@@ -21,10 +21,10 @@ public class TaxAction extends Actions {
     private final WebDriver driver;
     private final TaxWait taxWait;
 
-    public TaxAction(WebDriver driver) {
+    public TaxAction(WebDriver driver, TaxWait taxWait) {
         super(driver);
         this.driver = driver;
-        taxWait = new TaxWait(driver);
+        this.taxWait = taxWait;
     }
 
     public void click(BaseElement baseElement) {

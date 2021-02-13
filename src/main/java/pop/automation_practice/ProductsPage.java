@@ -1,7 +1,7 @@
 package pop.automation_practice;
 
 import core.lib.elements.base_elements.Button;
-import core.lib.test_setup.TestBase;
+import core.lib.test_base.TestBase;
 import io.qameta.allure.Step;
 import pop.automation_practice.products.ProductsSorting;
 
