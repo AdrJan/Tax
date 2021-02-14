@@ -4,6 +4,7 @@ import api.dictionary.ApiRequestsParams;
 import api.pojo.CreatedUserDataPojo;
 import api.pojo.UserListPojo;
 import api.pojo.UserPojo;
+import api.request.RegresInApiRequest;
 import core.lib.test_setup.TestListener;
 import org.json.JSONObject;
 import org.testng.Assert;
@@ -15,6 +16,8 @@ import static io.restassured.RestAssured.given;
 @Listeners(TestListener.class)
 public class ApiTests {
 
+    RegresInApiRequest regresInApiRequest = new RegresInApiRequest();
+
     //** API TESTING PLAYGROUND **
 
     @Test
@@ -25,13 +28,9 @@ public class ApiTests {
     }
 
     @Test
-    public void checkUserList() {
-        UserListPojo userListPojo = given()
-                .baseUri(ApiRequestsParams.REGRES_IN_API_BASE_URI)
-                .basePath(ApiRequestsParams.REGRES_IN_API_BASE_PATH)
-                .queryParam("page", 2)
-                .when()
-                .get(ApiRequestsParams.REGRES_IN_API_LIST_USERS_SERVICE)
+    public void checkUserListSize() {
+        UserListPojo userListPojo = regresInApiRequest
+                .getListUsers("page", 2)
                 .as(UserListPojo.class);
 
         Assert.assertEquals(userListPojo.getData().size(), userListPojo.getPer_page());
