@@ -59,7 +59,7 @@ public class Tests extends TestSetup {
         }
     }
 
-    @org.testng.annotations.Test(priority = 3, description = "Adding product to shopping cart.")
+    @Test(priority = 3, description = "Adding product to shopping cart.")
     public void addToCart() {
         ItemTile itemTile = new ItemTile();
         AddedItemSummary addedItemSummary = new AddedItemSummary();

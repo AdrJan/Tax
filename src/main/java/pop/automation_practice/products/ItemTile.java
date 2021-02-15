@@ -24,7 +24,7 @@ public class ItemTile extends TestBase {
     Label productContainerLabel = new Label().setFormat(PRODUCT_A_XPATH + "/../..");
     Label priceLabel = new Label().setFormat(PRODUCT_A_XPATH + "/../..//span[@itemprop = 'price']");
 
-    @Step("User hovers mouse above product {0}.")
+    @Step("User hovers mouse over product {0}.")
     public ItemTile hoverProduct(String productName) {
         productContainerLabel.fmtChange(productName);
         productContainerLabel.hover();
@@ -38,7 +38,7 @@ public class ItemTile extends TestBase {
         return this;
     }
 
-    @Step("Product {0} price is checked.")
+    @Step("Product {0} price is returned.")
     public Double getPrice(String productName) {
         priceLabel.fmtChange(productName);
         return Formatter.formatToDouble(priceLabel.getText());
@@ -48,7 +48,7 @@ public class ItemTile extends TestBase {
         return Formatter.formatToDouble(sw.textElx(webElement));
     }
 
-    @Step("All products prices are checked.")
+    @Step("All products prices are returned.")
     public List<Double> getAllProductsPrices() {
         priceLabel.fmtChange("");
         return sw.ell(priceLabel.getXpath())
