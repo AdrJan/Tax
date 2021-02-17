@@ -5,11 +5,9 @@ import core.lib.manager.driver_manager.DriverManager;
 import core.lib.manager.driver_manager.DriverManagerFactory;
 import core.lib.manager.logger.TaxLogger;
 import core.lib.test_base.TestBase;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
 
 /**
  * Setting everything before test execution.
@@ -21,30 +19,22 @@ public class TestSetup extends TestBase {
 
     private static DriverManager driverManager;
 
-    @BeforeSuite
-    public static void setUpSuite() {
-        TaxLogger.info("Setting up test suite");
+    @Before(order = 1)
+    public static void init() {
+        TaxLogger.info("Starting test.");
 
         driverManager = DriverManagerFactory.getDriver(Browsers.CHROME);
         driver = driverManager.getWebDriver();
+        TestBase.init(driver);
+    }
 
-        init(driver);
-
+    @Before(order = 2)
+    public static void setUpEnv() {
+        driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
     }
 
-    @BeforeMethod
-    public static void setUpTest() {
-        driver.manage().deleteAllCookies();
-        TaxLogger.testStarts();
-    }
-
-    @AfterMethod
-    public static void testClose() {
-        TaxLogger.testEnds();
-    }
-
-    @AfterSuite
+    @After
     public static void tearDown() {
         TaxLogger.info("Quitting WebDriver");
         driverManager.quitWebDriver();
