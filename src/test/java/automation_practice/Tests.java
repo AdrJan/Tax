@@ -1,7 +1,7 @@
 package automation_practice;
 
-import core.lib.test_setup.TestListener;
-import core.lib.test_setup.TestSetup;
+import core.lib.testsetup.TestListener;
+import core.lib.testsetup.TestSetup;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pop.automation_practice.MainPage;

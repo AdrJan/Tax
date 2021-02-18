@@ -1,4 +1,4 @@
-package core.lib.test_base;
+package core.lib.testbase;
 
 import core.lib.actions.TaxAction;
 import core.lib.actions.TaxAssert;

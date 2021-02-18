@@ -1,4 +1,4 @@
-package core.lib.test_base;
+package core.lib.testbase;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

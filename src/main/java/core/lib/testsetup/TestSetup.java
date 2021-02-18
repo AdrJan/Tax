@@ -1,10 +1,10 @@
-package core.lib.test_setup;
+package core.lib.testsetup;
 
 import core.lib.manager.driver_manager.Browsers;
 import core.lib.manager.driver_manager.DriverManager;
 import core.lib.manager.driver_manager.DriverManagerFactory;
 import core.lib.manager.logger.TaxLogger;
-import core.lib.test_base.TestBase;
+import core.lib.testbase.TestBase;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import org.openqa.selenium.WebDriver;

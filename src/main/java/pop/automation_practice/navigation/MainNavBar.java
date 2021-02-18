@@ -1,7 +1,7 @@
 package pop.automation_practice.navigation;
 
 import core.lib.elements.base_elements.Button;
-import core.lib.test_base.TestBase;
+import core.lib.testbase.TestBase;
 import io.qameta.allure.Step;
 
 /**

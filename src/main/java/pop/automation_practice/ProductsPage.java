@@ -1,7 +1,6 @@
 package pop.automation_practice;
 
 import core.lib.elements.base_elements.Button;
-import core.lib.test_base.TestBase;
 import io.qameta.allure.Step;
 import pop.automation_practice.products.ProductsSorting;
 
@@ -11,15 +10,14 @@ import pop.automation_practice.products.ProductsSorting;
  * @author Adrian Jankowski
  */
 
-public class ProductsPage extends TestBase {
+public class ProductsPage {
 
     Button sortingButton = new Button("//select[@id = 'selectProductSort']/..");
     Button productLabel = new Button().setFormat("//option[@value = '%s']");
 
     @Step("User sets product sorting.")
-    public ProductsPage setSorting(ProductsSorting productsSorting) {
+    public void setSorting(ProductsSorting productsSorting) {
         sortingButton.click();
         productLabel.fmtChange(productsSorting.getOptionValue());
-        return this;
     }
 }

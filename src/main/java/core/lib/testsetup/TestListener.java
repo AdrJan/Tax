@@ -1,7 +1,7 @@
-package core.lib.test_setup;
+package core.lib.testsetup;
 
 import core.lib.manager.logger.TaxLogger;
-import core.lib.test_base.TestBase;
+import core.lib.testbase.TestBase;
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;

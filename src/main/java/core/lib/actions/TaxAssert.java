@@ -1,7 +1,7 @@
 package core.lib.actions;
 
 import core.lib.manager.logger.TaxLogger;
-import core.lib.test_base.SeleniumWrapper;
+import core.lib.testbase.SeleniumWrapper;
 import org.testng.Assert;
 
 /**
