@@ -1,7 +1,7 @@
-package automation_practice.steps;
+package core.lib.page.steps;
 
+import core.lib.page.pop.CommonPage;
 import io.cucumber.java.en.Given;
-import pop.automation_practice.CommonPage;
 
 public class CommonSteps {
 

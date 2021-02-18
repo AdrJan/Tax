@@ -1,4 +1,4 @@
-package pop.automation_practice;
+package core.lib.page.pop;
 
 import core.lib.testbase.TestBase;
 import io.qameta.allure.Step;
