@@ -10,13 +10,13 @@ public class MainPageSteps {
     private final String STEP_AFFIX = AutomationPracticePageNames.MAIN_PAGE_NAME;
     private final MainPage mainPage = new MainPage();
 
-    @When(STEP_AFFIX + "search for {word}")
-    public void searchFor(String text) {
-        mainPage.searchFor(text);
-    }
-
     @Then(STEP_AFFIX + "main page is displayed")
     public void mainPageIsDisplayed() {
         mainPage.verifyIfIsDisplayed();
+    }
+
+    @When(STEP_AFFIX + "search for {}")
+    public void searchFor(String text) {
+        mainPage.searchFor(text);
     }
 }
